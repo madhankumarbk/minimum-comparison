@@ -1,0 +1,52 @@
+How would you find the second largest element in an array using minimum no of comparisons?
+
+
+INPUT:
+An arrayA[1..N] of integers andN, the number of elements in thearray.
+
+OUTPUT:
+Thesecond largest numberin the array.
+
+
+ALGORTHIM
+
+1. Get the input from the user.
+2. Sort the array in descending order to find the largest element.
+3. Print the second largest number using array index A[1]
+
+
+CODE:
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int A[10];
+int i , j , b;
+clrscr();
+//Getting input from user
+for(i=0 ; i<10 ; i++)
+{
+printf(" Enter the Number %d :" , i+1 );
+scanf("%d" , &A[i] );
+}
+//sorting the array
+for(i=0 ; i<10 ; i++)
+{
+for(j=i ; j<10 ; j++)
+{
+if(A[i] < A[j])
+{
+b = A[j] ;
+A[j] = A[i] ;
+A[i] = b ;
+}
+}
+}
+
+printf(" Largest Number is : %d\n" , A[0] );
+printf(" Second Largest Number is : %d\n" , A[1] ); 
+getch(); 
+}
+
+OUTPUT:
+ 
